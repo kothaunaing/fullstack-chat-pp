@@ -18,13 +18,13 @@ app.use(
 );
 
 dotenv.config();
-const { PORT, NODE_EVN } = process.env;
+const { PORT, NODE_ENV } = process.env;
 const __dirname = path.resolve();
 
 app.use("/api/auth", authRoutes);
 app.use("/api/message", messageRoutes);
 
-if (NODE_EVN === "production") {
+if (NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
   app.get("*", (req, res) => {
