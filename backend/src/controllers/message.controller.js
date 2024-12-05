@@ -39,7 +39,7 @@ export const getMessages = async (req, res) => {
       .sort({ createdAt: -1 }) // Sort by most recent first
       .limit(Number(limit) || 50);
 
-    res.status(200).json(messages);
+    res.status(200).json(messages.reverse());
   } catch (error) {
     console.log("Error in getMessages " + error.message);
     res.status(500).json({ message: "Internal server error" });
