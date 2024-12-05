@@ -67,7 +67,9 @@ const Messages = () => {
           </div>
           <div className="flex flex-col items-start">
             <p>{selectedUser.fullName}</p>
-            <p className="text-sm text-base-content">Online</p>
+            <p className="text-sm text-base-content">
+              {isUserOnline ? "Online" : "Offline"}
+            </p>
           </div>
         </button>
       </div>
